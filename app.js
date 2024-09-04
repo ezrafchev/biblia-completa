@@ -1,14 +1,17 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     const verseContainer = document.getElementById('verse-container');
-    const dailyVerse = 'João 3:16 - Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna.';
-
-    const verseElement = document.createElement('div');
-    verseElement.className = 'verse';
-    verseElement.textContent = dailyVerse;
-
-    verseContainer.appendChild(verseElement);
-    getAICommentary(dailyVerse);
+    fetch('http://127.0.0.1:8000/daily-verse')
+        .then(response => response.json())
+        .then(data => {
+            const dailyVerse = `${data.book} ${data.chapter}:${data.verse}`;
+            const verseElement = document.createElement('div');
+            verseElement.className = 'verse';
+            verseElement.textContent = dailyVerse;
+            verseContainer.appendChild(verseElement);
+            getAICommentary(dailyVerse);
+        })
+        .catch(error => console.error('Error fetching daily verse:', error));
 });
 
 document.getElementById('search-button').addEventListener('click', function() {

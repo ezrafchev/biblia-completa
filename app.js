@@ -56,12 +56,19 @@ function searchBible(query) {
         searchResults.appendChild(noResultElement);
     }
 
-    results.forEach(result => {
+    if (bibleData[book] && bibleData[book][chapter] && bibleData[book][chapter][verse - 1]) {
+        const result = `${book} ${chapter}:${verse} - ${bibleData[book][chapter][verse - 1]}`;
         const resultElement = document.createElement('div');
         resultElement.className = 'verse';
         resultElement.textContent = result;
         searchResults.appendChild(resultElement);
-    });
+        getAICommentary(result);
+    } else {
+        const noResultElement = document.createElement('div');
+        noResultElement.className = 'verse';
+        noResultElement.textContent = 'Nenhum resultado encontrado.';
+        searchResults.appendChild(noResultElement);
+    }
 }
 
 function getAICommentary(verse) {

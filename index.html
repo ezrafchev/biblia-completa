@@ -9,20 +9,16 @@
 </head>
 <body>
     <header>
-        <h1>Bíblia Completa</h1>
+        <h1>Bem-vindo à Bíblia Completa</h1>
     </header>
-    <main>
-        <section id="daily-verse">
-            <h2>Versículo Diário</h2>
-            <p id="verse"></p>
-        </section>
-        <section id="search">
-            <h2>Busca Avançada</h2>
-            <input type="text" id="search-input" placeholder="Buscar capítulo ou versículo">
-            <button id="search-button">Buscar</button>
-            <div id="search-results"></div>
-        </section>
-    </main>
+    <div class="container">
+        <h2>Versículo Diário</h2>
+        <div id="verse-container"></div>
+        <h2>Busca Avançada</h2>
+        <input type="text" id="search-input" placeholder="Digite o capítulo ou versículo">
+        <button id="search-button">Buscar</button>
+        <div id="search-results"></div>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>

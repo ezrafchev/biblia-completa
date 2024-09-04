@@ -38,3 +38,18 @@ section {
 #search-button:hover {
     background-color: #45a049;
 }
+
+h1 {
+    margin: 0;
+}
+
+.container {
+    padding: 20px;
+}
+
+.verse {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}

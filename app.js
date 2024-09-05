@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Função para buscar o versículo diário
     function fetchVersiculoDiario() {
-        fetch('/versiculo-diario')
+        fetch('http://74b0f22fea650ac7fa.blackbx.ai/versiculo-diario')
             .then(response => response.json())
             .then(data => {
                 document.getElementById('versiculo').innerText = data.versiculo;
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Função para buscar versículos
     function buscarVersiculos() {
         const query = document.getElementById('busca-input').value;
-        fetch(`/buscar?query=${query}`)
+        fetch(`http://74b0f22fea650ac7fa.blackbx.ai/buscar?query=${query}`)
             .then(response => response.json())
             .then(data => {
                 const resultadosDiv = document.getElementById('resultados');

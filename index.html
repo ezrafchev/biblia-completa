@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,16 +9,27 @@
 </head>
 <body>
     <header>
-        <h1>Bem-vindo à Bíblia Completa</h1>
+        <h1>Bíblia Completa</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Versículo Diário</a></li>
+                <li><a href="#">Busca</a></li>
+            </ul>
+        </nav>
     </header>
-    <div class="container">
-        <h2>Versículo Diário</h2>
-        <div id="verse-container"></div>
-        <h2>Busca Avançada</h2>
-        <input type="text" id="search-input" placeholder="Digite o capítulo ou versículo">
-        <button id="search-button">Buscar</button>
-        <div id="search-results"></div>
-    </div>
+    <main>
+        <section id="versiculo-diario">
+            <h2>Versículo Diário</h2>
+            <p id="versiculo"></p>
+        </section>
+        <section id="busca">
+            <h2>Busca</h2>
+            <input type="text" id="busca-input" placeholder="Buscar versículo...">
+            <button id="busca-button">Buscar</button>
+            <div id="resultados"></div>
+        </section>
+    </main>
     <script src="app.js"></script>
 </body>
 </html>

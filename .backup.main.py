@@ -55,11 +55,7 @@ def comentario(versiculo: str):
             json={"inputs": versiculo, "parameters": {"max_length": 50}}
         )
         response.raise_for_status()
-        response_json = response.json()
-        if isinstance(response_json, list) and len(response_json) > 0:
-            comentario = response_json[0].get("generated_text", "Comentário não disponível.")
-        else:
-            comentario = "Comentário não disponível."
+        comentario = response.json()[0].get("generated_text", "Comentário não disponível.")
         return JSONResponse(content={"comentario": comentario})
     except requests.exceptions.RequestException as e:
         raise HTTPException(status_code=500, detail=str(e))
